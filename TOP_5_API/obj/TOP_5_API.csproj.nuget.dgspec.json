@@ -1,0 +1,71 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\BACK UP\\Strony\\TOP_5\\TOP_5_API\\TOP_5_API.csproj": {}
+  },
+  "projects": {
+    "D:\\BACK UP\\Strony\\TOP_5\\TOP_5_API\\TOP_5_API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\BACK UP\\Strony\\TOP_5\\TOP_5_API\\TOP_5_API.csproj",
+        "projectName": "TOP_5_API",
+        "projectPath": "D:\\BACK UP\\Strony\\TOP_5\\TOP_5_API\\TOP_5_API.csproj",
+        "packagesPath": "C:\\Users\\Wiktor\\.nuget\\packages\\",
+        "outputPath": "D:\\BACK UP\\Strony\\TOP_5\\TOP_5_API\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Wiktor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
