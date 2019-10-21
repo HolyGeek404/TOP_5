@@ -1,16 +1,16 @@
-$primary: rgb(51, 142, 245);
-$NavBGC: rgb(243, 241, 245);
+$primary: #338ef5;
+$NavBGC: #f3f1f5;
 
 *
 {
     font-family: 'Baloo Bhai', cursive;
-    color: rgb(51, 142, 245);
+    color: #338ef5;
 }
 nav
 {
     width: 100%;
     height: 50px;
-    background-color: rgb(243, 241, 245);
+    background-color: #f3f1f5;
 }
 
 #nav_container
@@ -19,6 +19,7 @@ nav
     height: 50px;
     display: flex;
     align-content: center;
+    border-bottom: 2px solid $primary;
 
     span
     {

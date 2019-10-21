@@ -1,6 +1,56 @@
-<header>
-    <app-nav></app-nav>
-    <main>
-        
-    </main>
-</header>
+<main>
+    <div id="container">
+        <div id="content">
+            <div class="category" 
+                id="games" 
+                [style.background-color]="randomColor()"
+                [ngClass]="{'activeCategory': activeGame}"
+                (click)="activeGame = true"
+                (mouseleave)="activeGame = false"                
+                >
+
+            </div>
+
+            <div class="category" 
+                id="films" 
+                [style.background-color]="randomColor()"
+                [ngClass]="{'activeCategory': activeFilm}"
+                (click)="activeFilm = true"
+                (mouseleave)="activeFilm = false" 
+                >
+
+            </div>
+
+            <div class="category" 
+                id="actors" 
+                [style.background-color]="randomColor()"
+                [ngClass]="{'activeCategory': activeActors}"
+                (click)="activeActors = true"
+                (mouseleave)="activeActors = false" 
+            >
+
+            </div>
+
+            <div class="category" 
+            id="singers" 
+            [style.background-color]="randomColor()"
+            [ngClass]="{'activeCategory': activeSingers}"
+            (click)="activeSingers = true"
+            (mouseleave)="activeSingers = false" 
+            >
+
+            </div>
+
+            <div class="category" 
+            id="ytchannels" 
+            [style.background-color]="randomColor()"
+            [ngClass]="{'activeCategory': activeYT}"
+            (click)="activeYT = true"
+            (mouseleave)="activeYT = false" 
+            >
+
+            </div>
+        </div>
+    </div>
+</main>
+
