@@ -1,53 +1,53 @@
 <main>
     <div id="container">
         <div id="content">
+
             <div class="category" 
                 id="games" 
-                [style.background-color]="randomColor()"
-                [ngClass]="{'activeCategory': categoryList[0]}"
-                (click)="setActiveCategory(0)"                   
+                [ngClass]="{'activeCategory': categoryList[0]}"             
                 >
-                {{game}}
-                {{films}}
-                {{actors}}
+                <div class="category_title" (click)="setActiveCategory(0)" id="games_title">
+                    <span>Games</span>
+                </div>
+                <div class="categoryImg"></div>
             </div>
 
             <div class="category" 
                 id="films" 
-                [style.background-color]="randomColor()"
                 [ngClass]="{'activeCategory': categoryList[1]}"   
-                (click)="setActiveCategory(1)" 
                 >
-
-
+                <div class="category_title" (click)="setActiveCategory(1)" id="films_title">
+                    <span>Films</span>
+                </div>
             </div>
 
             <div class="category" 
                 id="actors" 
-                [style.background-color]="randomColor()"
                 [ngClass]="{'activeCategory': categoryList[2]}"
-                (click)="setActiveCategory(2)" 
-            >
-
+                >
+                <div class="category_title" (click)="setActiveCategory(2)" id="actors_title">
+                    <span>Actors</span>
+                </div>
             </div>
 
             <div class="category" 
-            id="singers" 
-            [style.background-color]="randomColor()"
-            [ngClass]="{'activeCategory': categoryList[3]}"
-            (click)="setActiveCategory(3)" 
-            >
-
+                id="singers" 
+                [ngClass]="{'activeCategory': categoryList[3]}"
+                >
+                <div class="category_title" (click)="setActiveCategory(3)" id="singers_title">
+                    <span>Singers</span>
+                </div>
             </div>
 
             <div class="category" 
-            id="ytchannels" 
-            [style.background-color]="randomColor()"
-            [ngClass]="{'activeCategory': categoryList[4]}"
-            (click)="setActiveCategory(4)"  
-            >
-
+                id="yt" 
+                [ngClass]="{'activeCategory': categoryList[4]}"
+                >
+                <div class="category_title" (click)="setActiveCategory(4)" id="yt_title">
+                    <span id="ihateyou">Channels</span>
+                </div>
             </div>
+
         </div>
     </div>
 </main>

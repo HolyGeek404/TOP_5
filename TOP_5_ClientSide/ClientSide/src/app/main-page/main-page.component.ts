@@ -6,10 +6,19 @@ import { HttpService } from '../Http.service'
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss']
 })
+
 export class MainPageComponent implements OnInit {
 
   constructor(private http: HttpService) { }
-  
+  ngOnInit() 
+  {
+    this.http.getValues().subscribe(data => 
+      {
+        this.result = data; 
+        console.log(this.result); 
+      });
+  }
+
   result: Object;
 
   categoryList: Array <boolean> =
@@ -34,15 +43,6 @@ export class MainPageComponent implements OnInit {
     }
   }
 
-  ngOnInit() 
-  {
-    this.http.getValues().subscribe(data => 
-      {
-        this.result = data; 
-        console.log(this.result); 
-      });
-  }
-
   randomColor()
   {
     var length = 6;
@@ -56,7 +56,4 @@ export class MainPageComponent implements OnInit {
 
     return hex;
   }
-
-  //TODO: dodanie funkcji ktora iteruje po tablicy kategorii - funkcja z parametrem zmiennej 
-  //      div'a w ktorym jest wywplywana
 }

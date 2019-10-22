@@ -18,29 +18,111 @@ $NavBGC: #f3f1f5;
     background-color: $NavBGC;
    -webkit-box-shadow: 0px 0px 37px 17px rgba(226,225,227,1);
     box-shadow: 0px 0px 37px 17px rgba(226,225,227,1);
-    // display: flex;
-    // flex-direction: row;
 }
 
-// .category:first-child
-// {
-//     width: 900px;
-//     height: 100%;
-//     background-color: rgb(24, 119, 119);
-//     float: left;
-// }
 .category
 {
     width: 75px;
     height: 100%;
-    background-color: rgb(24, 119, 119);
     float: left;
     border-radius: 5px;
     transition: all, 0.8s;
-    z-index: 1000000;
-}   
 
+    .categoryImg
+    {
+        width: 500px;
+        height: 100%;
+        display: block;
+        float: left;
+        background-image: url("../../assets/category_imgs/gameCategoryimg.jpg");
+        background-attachment: fixed;
+        background-size: contain;
+    }
+}   
+// TODO: funkcja w scss ktora dobiera odpowiednie tla do kategorii
+// TODO: ogarnac z-index - div'y musza na siebie nachodzic 
 .activeCategory
 {
     width: 900px !important;
+}
+
+.category_title
+{
+    width: 75px;
+    height: 100%;
+    background-color: $NavBGC;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition:all, 0.8s;
+    float: left;
+
+    span
+    {
+        font-family: 'Modak', cursive;
+        font-size: 48px;
+        transform-origin: 40px;
+        transform: rotate(-90deg);
+        display: block;
+        color: $primary;
+        letter-spacing: 5px;
+        
+    }
+}
+#ihateyou::before
+{
+    content: 'YT';
+}
+.category:hover .category_title
+{
+    background: unset;
+}
+
+
+
+#games
+{
+    background: linear-gradient(198deg, #c94b4b, #4b134f);
+    z-index: -10;
+}
+#games_title
+{
+  
+}
+
+#films
+{
+    z-index: 1009999999999;
+    background: linear-gradient(198deg, #b92b27, #1565C0);
+}
+#films_title
+{
+    
+}
+
+#actors
+{
+    background: linear-gradient(198deg, #1CB5E0, #000046);
+}
+#actors_title
+{
+    
+}
+
+#singers
+{
+    background: linear-gradient(198deg, #43C6AC,#191654);
+}
+#singers_title
+{
+   
+}
+
+#yt
+{   
+    background: linear-gradient(198deg, #34e89e, #0f3443);
+}
+#yt_title
+{
+   
 }
