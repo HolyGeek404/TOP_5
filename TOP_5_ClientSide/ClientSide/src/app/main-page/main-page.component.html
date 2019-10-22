@@ -4,29 +4,29 @@
             <div class="category" 
                 id="games" 
                 [style.background-color]="randomColor()"
-                [ngClass]="{'activeCategory': activeGame}"
-                (click)="activeGame = true"
-                (mouseleave)="activeGame = false"                
+                [ngClass]="{'activeCategory': categoryList[0]}"
+                (click)="setActiveCategory(0)"                   
                 >
-
+                {{game}}
+                {{films}}
+                {{actors}}
             </div>
 
             <div class="category" 
                 id="films" 
                 [style.background-color]="randomColor()"
-                [ngClass]="{'activeCategory': activeFilm}"
-                (click)="activeFilm = true"
-                (mouseleave)="activeFilm = false" 
+                [ngClass]="{'activeCategory': categoryList[1]}"   
+                (click)="setActiveCategory(1)" 
                 >
+
 
             </div>
 
             <div class="category" 
                 id="actors" 
                 [style.background-color]="randomColor()"
-                [ngClass]="{'activeCategory': activeActors}"
-                (click)="activeActors = true"
-                (mouseleave)="activeActors = false" 
+                [ngClass]="{'activeCategory': categoryList[2]}"
+                (click)="setActiveCategory(2)" 
             >
 
             </div>
@@ -34,9 +34,8 @@
             <div class="category" 
             id="singers" 
             [style.background-color]="randomColor()"
-            [ngClass]="{'activeCategory': activeSingers}"
-            (click)="activeSingers = true"
-            (mouseleave)="activeSingers = false" 
+            [ngClass]="{'activeCategory': categoryList[3]}"
+            (click)="setActiveCategory(3)" 
             >
 
             </div>
@@ -44,9 +43,8 @@
             <div class="category" 
             id="ytchannels" 
             [style.background-color]="randomColor()"
-            [ngClass]="{'activeCategory': activeYT}"
-            (click)="activeYT = true"
-            (mouseleave)="activeYT = false" 
+            [ngClass]="{'activeCategory': categoryList[4]}"
+            (click)="setActiveCategory(4)"  
             >
 
             </div>

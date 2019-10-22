@@ -11,7 +11,28 @@ export class MainPageComponent implements OnInit {
   constructor(private http: HttpService) { }
   
   result: Object;
-  activeGame: boolean = true;
+
+  categoryList: Array <boolean> =
+  [
+    true,
+    false,
+    false,
+    false,
+    false
+  ];
+
+  setActiveCategory(active: number)
+  { 
+    for(let i=0; i<5; i++)
+    {
+      if(i == active)
+      {
+        this.categoryList[i] = true; 
+        continue;
+      }
+      this.categoryList[i] = false;
+    }
+  }
 
   ngOnInit() 
   {
