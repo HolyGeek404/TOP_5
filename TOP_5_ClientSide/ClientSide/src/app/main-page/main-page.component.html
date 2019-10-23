@@ -1,7 +1,7 @@
 <main>
-    <div id="container">
+    <div id="container" >
         <div id="content">
-            
+
             <div class="category"
                 id="games" 
                 [ngClass]="{
@@ -9,11 +9,11 @@
                     'unAC': categoryList[0]==false
                 }"
                 >
-                <div class="category_title" (click)="setActiveCategory(0)" id="games_title">
+                <div class="category_title" (click)="a(2)" (click)="setActiveCategory(0)" id="games_title">
                     <span>Games</span>
                 </div>
                 <div class="categoryImg"></div>
-                <div onload="a();"  class="categoryContent">
+                <div class="categoryContent">
                     <ul>
                         <li>Assassin’s Creed III</li>
                         <li>Far Cry 3</li>
@@ -28,7 +28,7 @@
                 id="films" 
                 [ngClass]="{'activeCategory': categoryList[1]}"   
                 >
-                <div class="category_title" (click)="setActiveCategory(1)" id="films_title">
+                <div class="category_title" (click)="a(1)" (click)="setActiveCategory(1)" id="films_title">
                     <span>Films</span>
                 </div>
             </div>

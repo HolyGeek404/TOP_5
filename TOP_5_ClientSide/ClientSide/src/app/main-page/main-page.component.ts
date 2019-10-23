@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../Http.service'
 
-function a()
-        {
-            var x = document.getElementById("games").offsetHeight;
-            alert(x); 
-        }
-
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
@@ -18,8 +12,6 @@ export class MainPageComponent implements OnInit {
   constructor(private http: HttpService) { }
   ngOnInit() 
   {
-    a();
-    
     this.http.getValues().subscribe(data => 
       {
         this.result = data; 
@@ -37,6 +29,23 @@ export class MainPageComponent implements OnInit {
     false,
     false
   ];
+
+  
+  a(a)
+  {   
+      switch(a)
+      {
+        case 1:
+          $(".categoryContent").fadeOut(200);
+        break;
+        case 2:
+          $(".categoryContent").delay(1000).fadeIn(500);
+        break;
+      }
+      // $(".categoryContent").css("display", "none");
+      
+      // $(".category").fadeIn();  
+  }
 
   setActiveCategory(active: number)
   { 
