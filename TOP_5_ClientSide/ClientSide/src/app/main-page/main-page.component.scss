@@ -32,19 +32,51 @@ $NavBGC: #f3f1f5;
     {
         width: 500px;
         height: 100%;
-        display: block;
         float: left;
         background-image: url("../../assets/category_imgs/gameCategoryimg.jpg");
         background-attachment: fixed;
         background-size: contain;
+        z-index: -10;
+        transition: all, 0.6s;
+        opacity: 1;
     }
 }   
-// TODO: funkcja w scss ktora dobiera odpowiednie tla do kategorii
-// TODO: ogarnac z-index - div'y musza na siebie nachodzic 
-.activeCategory
+.categoryContent
 {
-    width: 900px !important;
+    width: 300px;
+    height: 100%;
+    transition: all, 0.6s;
+    transition-delay: 0.2s;
+   
+    color: $primary;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    font-size: 25px;
+    display: flex;
+    align-content: center;
+    
+    ul
+    {
+        display: block;
+        float: left;
+        width: 300px;
+        text-align: center;
+        margin: auto;
+        list-style: none;
+        transition:all, 0.4s;
+        transition-delay: 0.3s;
+        font-size: inherit;
+        opacity: 1;
+        
+        li
+        {
+            margin: 10px 0px ;
+        }
+    }
 }
+
+// TODO: funkcja w scss ktora dobiera odpowiednie tla do kategorii
 
 .category_title
 {
@@ -78,12 +110,46 @@ $NavBGC: #f3f1f5;
     background: unset;
 }
 
-
+.activeCategory
+{
+    width: 900px !important;
+    
+    .categoryImg
+    {
+        opacity: 1;
+        width: 500px;
+    }
+}
+.unAC
+{
+    width: 75px !important;
+    
+    .categoryImg
+    {
+        opacity: 0;
+        width: 0px;
+    }
+    .categoryContent
+    {
+        width: 0px;
+        font-size: 0px;
+        opacity: 0;
+        transition: all, 0.2s;
+        ul
+        {
+            width: 0;
+            opacity: 0;
+            transition: width, opacity, 0.3s;
+            transition-delay: 0.1s;
+            visibility: hidden;
+        }
+    }
+}
 
 #games
 {
     background: linear-gradient(198deg, #c94b4b, #4b134f);
-    z-index: -10;
+    
 }
 #games_title
 {
@@ -92,7 +158,7 @@ $NavBGC: #f3f1f5;
 
 #films
 {
-    z-index: 1009999999999;
+   
     background: linear-gradient(198deg, #b92b27, #1565C0);
 }
 #films_title
@@ -102,27 +168,29 @@ $NavBGC: #f3f1f5;
 
 #actors
 {
+  
     background: linear-gradient(198deg, #1CB5E0, #000046);
 }
 #actors_title
 {
-    
 }
 
 #singers
 {
+    
     background: linear-gradient(198deg, #43C6AC,#191654);
 }
 #singers_title
 {
-   
+      
 }
 
 #yt
 {   
+    
     background: linear-gradient(198deg, #34e89e, #0f3443);
 }
 #yt_title
 {
-   
+  
 }

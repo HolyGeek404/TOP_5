@@ -30,7 +30,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "/TOP_5_ClientSide/ClientSide/node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {

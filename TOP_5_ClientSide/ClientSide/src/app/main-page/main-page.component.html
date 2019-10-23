@@ -1,15 +1,27 @@
 <main>
     <div id="container">
         <div id="content">
-
-            <div class="category" 
+            
+            <div class="category"
                 id="games" 
-                [ngClass]="{'activeCategory': categoryList[0]}"             
+                [ngClass]="{
+                    'activeCategory': categoryList[0],
+                    'unAC': categoryList[0]==false
+                }"
                 >
                 <div class="category_title" (click)="setActiveCategory(0)" id="games_title">
                     <span>Games</span>
                 </div>
                 <div class="categoryImg"></div>
+                <div onload="a();"  class="categoryContent">
+                    <ul>
+                        <li>Assassin’s Creed III</li>
+                        <li>Far Cry 3</li>
+                        <li>Grand Theft Auto IV</li>
+                        <li>The Elder Scrolls V: Skyrim</li>
+                        <li>Gears of War</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="category" 
