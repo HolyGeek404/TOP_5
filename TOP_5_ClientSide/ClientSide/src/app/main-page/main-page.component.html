@@ -1,19 +1,19 @@
 <main>
-    <div id="container" >
+    <div id="welcomeAnimation"><span>TOP 5</span></div>
+    <div id="container">
         <div id="content">
-
             <div class="category"
                 id="games" 
                 [ngClass]="{
-                    'activeCategory': categoryList[0],
-                    'unAC': categoryList[0]==false
+                    'activeCategory': activeCategoryList[0],
+                    'unAC': activeCategoryList[0]==false
                 }"
                 >
-                <div class="category_title" (click)="a(2)" (click)="setActiveCategory(0)" id="games_title">
+                <div class="category_title" (click)="setActiveCategory(0, '#gamesContent')" id="games_title">
                     <span>Games</span>
                 </div>
                 <div class="categoryImg"></div>
-                <div class="categoryContent">
+                <div class="categoryContent" id="gamesContent">
                     <ul>
                         <li>Assassin’s Creed III</li>
                         <li>Far Cry 3</li>
@@ -26,37 +26,89 @@
 
             <div class="category" 
                 id="films" 
-                [ngClass]="{'activeCategory': categoryList[1]}"   
+                [ngClass]="{
+                    'activeCategory': activeCategoryList[1],
+                    'unAC': activeCategoryList[1]==false
+                }"  
                 >
-                <div class="category_title" (click)="a(1)" (click)="setActiveCategory(1)" id="films_title">
+                <div class="category_title" (click)="setActiveCategory(1, '#filmsContent')" id="films_title">
                     <span>Films</span>
+                </div>
+                <div class="categoryImg"></div>
+                <div class="categoryContent" id="filmsContent">
+                    <ul>
+                        <li>Assassin’s Creed III</li>
+                        <li>Far Cry 3</li>
+                        <li>Grand Theft Auto IV</li>
+                        <li>The Elder Scrolls V: Skyrim</li>
+                        <li>Gears of War</li>
+                    </ul>
                 </div>
             </div>
 
             <div class="category" 
                 id="actors" 
-                [ngClass]="{'activeCategory': categoryList[2]}"
+                [ngClass]="{
+                    'activeCategory': activeCategoryList[2],
+                    'unAC': activeCategoryList[2]==false
+                }"  
                 >
-                <div class="category_title" (click)="setActiveCategory(2)" id="actors_title">
+                <div class="category_title" (click)="setActiveCategory(2, '#actorsContent')" id="actors_title">
                     <span>Actors</span>
+                </div>
+                <div class="categoryImg"></div>
+                <div class="categoryContent" id="actorsContent">
+                    <ul>
+                        <li>Assassin’s Creed III</li>
+                        <li>Far Cry 3</li>
+                        <li>Grand Theft Auto IV</li>
+                        <li>The Elder Scrolls V: Skyrim</li>
+                        <li>Gears of War</li>
+                    </ul>
                 </div>
             </div>
 
             <div class="category" 
                 id="singers" 
-                [ngClass]="{'activeCategory': categoryList[3]}"
+                [ngClass]="{
+                    'activeCategory': activeCategoryList[3],
+                    'unAC': activeCategoryList[3]==false
+                }"  
                 >
-                <div class="category_title" (click)="setActiveCategory(3)" id="singers_title">
+                <div class="category_title" (click)="setActiveCategory(3, '#singersContent')" id="singers_title">
                     <span>Singers</span>
+                </div>
+                <div class="categoryImg"></div>
+                <div class="categoryContent" id="singersContent">
+                    <ul>
+                        <li>Assassin’s Creed III</li>
+                        <li>Far Cry 3</li>
+                        <li>Grand Theft Auto IV</li>
+                        <li>The Elder Scrolls V: Skyrim</li>
+                        <li>Gears of War</li>
+                    </ul>
                 </div>
             </div>
 
             <div class="category" 
                 id="yt" 
-                [ngClass]="{'activeCategory': categoryList[4]}"
+                [ngClass]="{
+                    'activeCategory': activeCategoryList[4],
+                    'unAC': activeCategoryList[4]==false
+                }"  
                 >
-                <div class="category_title" (click)="setActiveCategory(4)" id="yt_title">
+                <div class="category_title" (click)="setActiveCategory(4, '#ytContent')" id="yt_title">
                     <span id="ihateyou">Channels</span>
+                </div>
+                <div class="categoryImg"></div>
+                <div class="categoryContent" id="ytContent">
+                    <ul>
+                        <li>Assassin’s Creed III</li>
+                        <li>Far Cry 3</li>
+                        <li>Grand Theft Auto IV</li>
+                        <li>The Elder Scrolls V: Skyrim</li>
+                        <li>Gears of War</li>
+                    </ul>
                 </div>
             </div>
 

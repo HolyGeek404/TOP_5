@@ -7,56 +7,75 @@ import { HttpService } from '../Http.service'
   styleUrls: ['./main-page.component.scss']
 })
 
-export class MainPageComponent implements OnInit {
+export class MainPageComponent implements OnInit 
+{
+  result: Object;
+  activeCategoryList: Array <boolean> = [true,false,false,false,false];
+  wasActived: any;
 
   constructor(private http: HttpService) { }
+
   ngOnInit() 
   {
-    this.http.getValues().subscribe(data => 
-      {
-        this.result = data; 
-        console.log(this.result); 
-      });
+    this.fadeOutAllCategoryContents();
+    this.welcome();
   }
 
-  result: Object;
-
-  categoryList: Array <boolean> =
-  [
-    true,
-    false,
-    false,
-    false,
-    false
-  ];
-
-  
-  a(a)
-  {   
-      switch(a)
-      {
-        case 1:
-          $(".categoryContent").fadeOut(200);
-        break;
-        case 2:
-          $(".categoryContent").delay(1000).fadeIn(500);
-        break;
-      }
-      // $(".categoryContent").css("display", "none");
-      
-      // $(".category").fadeIn();  
+  welcome()
+  {
+    $('#welcomeAnimation').delay(1000).animate({top: '-100%'}, 1200);
   }
 
-  setActiveCategory(active: number)
+  fadeOutAllCategoryContents()
+  {
+    $('#filmsContent').fadeOut(0);
+    $('#actorsContent').fadeOut(0);
+    $('#singersContent').fadeOut(0);
+    $('#ytContent').fadeOut(0);
+  }
+
+  setActiveCategory(active: number, categoryName: string)
   { 
+
+    if(this.activeCategoryList[active] == false)
+    {
+      this.activeCategoryList[active] = true;
+      $(categoryName).fadeIn(1500);
+    }
+    
     for(let i=0; i<5; i++)
     {
       if(i == active)
       {
-        this.categoryList[i] = true; 
         continue;
+      }  
+
+      if(this.activeCategoryList[i] == true && i != active)
+      {
+        switch(i)
+        {
+          case 0:
+              $('#gamesContent').fadeOut(500);
+          break;
+
+          case 1:
+              $('#filmsContent').fadeOut(500);
+          break;
+
+          case 2:
+              $('#actorsContent').fadeOut(500);
+          break;
+
+          case 3:
+            $('#singersContent').fadeOut(500);
+          break;
+
+          case 4:
+            $('#ytContent').fadeOut(500);
+          break;
+        }
       }
-      this.categoryList[i] = false;
+      this.activeCategoryList[i] = false
     }
   }
 
