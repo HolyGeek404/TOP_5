@@ -1,6 +1,33 @@
 $primary: #338ef5;
 $NavBGC: #f3f1f5;
 
+@mixin setBGImgCategory($categoryName)
+{
+    @if $categoryName == game
+    {
+        background: url("../../assets/category_imgs/gameCategoryImg.jpg");
+    }
+    @else if $categoryName == film
+    {
+        background: url("../../assets/category_imgs/filmCategoryImg.jpg");     
+    }
+    @else if $categoryName == actor
+    {
+        background: url("../../assets/category_imgs/actorCategoryImg.jpg");
+    }
+    @else if $categoryName == singer
+    {
+        background: url("../../assets/category_imgs/singerCategoryImg.jpg");     
+    }
+    @else if $categoryName == yt
+    {
+        background: url("../../assets/category_imgs/ytCategoryImg.jpg");             
+    }
+
+    background-attachment: fixed;
+    background-size: contain;  
+}
+
 #container
 {
     width: 100%;
@@ -33,11 +60,8 @@ $NavBGC: #f3f1f5;
         width: 500px;
         height: 100%;
         float: left;
-        background-image: url("../../assets/category_imgs/gameCategoryimg.jpg");
-        background-attachment: fixed;
-        background-size: contain;
         transition: all, 0.6s;
-        opacity: 1;
+        opacity: 1;        
     }
 }   
 .categoryContent
@@ -71,8 +95,6 @@ $NavBGC: #f3f1f5;
         }
     }
 }
-
-// TODO: funkcja w scss ktora dobiera odpowiednie tla do kategorii
 
 .category_title
 {
@@ -110,11 +132,6 @@ $NavBGC: #f3f1f5;
 {
     width: 900px !important;
     
-    // .categoryImg
-    // {
-    //     opacity: 1;
-    //     width: 500px;
-    // }
     .categoryContent
     {
         width: 325px !important;
@@ -163,48 +180,56 @@ $NavBGC: #f3f1f5;
 #games
 {
     background: linear-gradient(198deg, #c94b4b, #4b134f);
-    
+
+    .categoryImg
+    {
+        @include setBGImgCategory(game);
+    }
 }
-#games_title
-{
-  
-}
+
 
 #films
 {
-   
     background: linear-gradient(198deg, #b92b27, #1565C0);
+
+    .categoryImg
+    {
+        @include setBGImgCategory(film);
+    }
 }
-#films_title
-{
-    
-}
+
 
 #actors
 {
   
     background: linear-gradient(198deg, #1CB5E0, #000046);
+
+    .categoryImg
+    {
+        @include setBGImgCategory(actor);
+    }
 }
-#actors_title
-{
-}
+
 
 #singers
 {
     
     background: linear-gradient(198deg, #43C6AC,#191654);
+
+    .categoryImg
+    {
+        @include setBGImgCategory(singer);
+    }
 }
-#singers_title
-{
-      
-}
+
 
 #yt
 {   
     
     background: linear-gradient(198deg, #34e89e, #0f3443);
-}
-#yt_title
-{
-  
+
+    .categoryImg
+    {
+        @include setBGImgCategory(yt);
+    }
 }
