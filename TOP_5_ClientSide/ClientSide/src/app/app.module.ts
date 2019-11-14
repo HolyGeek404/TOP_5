@@ -5,12 +5,15 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { NavComponent } from './nav/nav.component';
 import { MainPageComponent } from './main-page/main-page.component';
-import { fromEventPattern } from 'rxjs';
+import { GameComponent } from './gameCategory/game/game.component';
+import { XdComponent } from './xd/xd.component';
 
 @NgModule({
    declarations: [
       NavComponent,
-      MainPageComponent
+      MainPageComponent,
+      GameComponent,
+      XdComponent
    ],
    imports: [
       BrowserModule,
@@ -18,8 +21,6 @@ import { fromEventPattern } from 'rxjs';
       HttpClientModule
    ],
    providers: [],
-   bootstrap: [
-      MainPageComponent
-   ]
+   bootstrap: [XdComponent]
 })
 export class AppModule { }

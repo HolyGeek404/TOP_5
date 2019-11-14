@@ -11,7 +11,6 @@ export class MainPageComponent implements OnInit
 {
   result: Object;
   activeCategoryList: Array <boolean> = [true,false,false,false,false];
-  wasActived: any;
 
   constructor(private http: HttpService) { }
 
@@ -23,7 +22,7 @@ export class MainPageComponent implements OnInit
 
   welcome()
   {
-    $('#welcomeAnimation').delay(1000).animate({top: '-100%'}, 1200);
+    $('#welcomeAnimation').delay(1400).animate({top: '-100%'}, 1200);
   }
 
   fadeOutAllCategoryContents()
@@ -77,19 +76,5 @@ export class MainPageComponent implements OnInit
       }
       this.activeCategoryList[i] = false
     }
-  }
-
-  randomColor()
-  {
-    var length = 6;
-    var chars = '0123456789ABCDEF';
-    var hex = '#';
-
-    while(length--)
-    {
-      hex += chars[(Math.random() * 16) | 0];
-    }
-
-    return hex;
   }
 }

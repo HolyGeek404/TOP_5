@@ -15,3 +15,17 @@ D:\BACK UP\Strony\TOP_5\TOP_5\TOP_5_API\obj\Debug\netcoreapp2.2\TOP_5_API.pdb
 D:\BACK UP\Strony\TOP_5\TOP_5\TOP_5_API\bin\Debug\netcoreapp2.2\appsettings.Development.json
 D:\BACK UP\Strony\TOP_5\TOP_5\TOP_5_API\bin\Debug\netcoreapp2.2\appsettings.json
 D:\BACK UP\Strony\TOP_5\TOP_5\TOP_5_API\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+D:\BACK UP\Strony\TOP_5\TOP_5_API\bin\Debug\netcoreapp2.2\TOP_5_API.deps.json
+D:\BACK UP\Strony\TOP_5\TOP_5_API\bin\Debug\netcoreapp2.2\TOP_5_API.runtimeconfig.json
+D:\BACK UP\Strony\TOP_5\TOP_5_API\bin\Debug\netcoreapp2.2\TOP_5_API.runtimeconfig.dev.json
+D:\BACK UP\Strony\TOP_5\TOP_5_API\bin\Debug\netcoreapp2.2\TOP_5_API.dll
+D:\BACK UP\Strony\TOP_5\TOP_5_API\bin\Debug\netcoreapp2.2\TOP_5_API.pdb
+D:\BACK UP\Strony\TOP_5\TOP_5_API\obj\Debug\netcoreapp2.2\TOP_5_API.csprojAssemblyReference.cache
+D:\BACK UP\Strony\TOP_5\TOP_5_API\obj\Debug\netcoreapp2.2\TOP_5_API.csproj.CoreCompileInputs.cache
+D:\BACK UP\Strony\TOP_5\TOP_5_API\obj\Debug\netcoreapp2.2\TOP_5_API.RazorAssemblyInfo.cache
+D:\BACK UP\Strony\TOP_5\TOP_5_API\obj\Debug\netcoreapp2.2\TOP_5_API.RazorAssemblyInfo.cs
+D:\BACK UP\Strony\TOP_5\TOP_5_API\obj\Debug\netcoreapp2.2\TOP_5_API.AssemblyInfoInputs.cache
+D:\BACK UP\Strony\TOP_5\TOP_5_API\obj\Debug\netcoreapp2.2\TOP_5_API.AssemblyInfo.cs
+D:\BACK UP\Strony\TOP_5\TOP_5_API\obj\Debug\netcoreapp2.2\TOP_5_API.RazorTargetAssemblyInfo.cache
+D:\BACK UP\Strony\TOP_5\TOP_5_API\obj\Debug\netcoreapp2.2\TOP_5_API.dll
+D:\BACK UP\Strony\TOP_5\TOP_5_API\obj\Debug\netcoreapp2.2\TOP_5_API.pdb
