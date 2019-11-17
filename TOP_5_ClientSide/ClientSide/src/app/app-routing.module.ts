@@ -7,6 +7,8 @@ import { MainPageComponent } from './main-page/main-page.component';
 const routes: Routes = [
   { path: '', component:MainPageComponent },
   { path: 'game/ACIII', component:GameComponent },
+  { path: 'game/FC3', component:GameComponent },
+
 ];
 
 @NgModule({

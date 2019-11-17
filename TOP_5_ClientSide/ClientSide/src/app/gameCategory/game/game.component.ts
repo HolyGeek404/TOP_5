@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { GameService } from '../service/Game.service';
 
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
-  styleUrls: ['./game.component.css']
+  styleUrls: ['./game.component.scss']
 })
-export class GameComponent implements OnInit {
+export class GameComponent implements OnInit 
+{
+  constructor(private service: GameService){}
 
-  constructor() { }
+  message: string;
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+    this.message = this.service.ReturnCategoryName();
   }
-
 }

@@ -23,13 +23,13 @@ namespace TOP_5_API.Controllers
             switch(categoryName)
             {
                 case "games":
-                    return "games";      
+                    return "gamesaaaa";      
 
                 case "films":
-                    return "films";
+                    return "filmsaaaa";
                     
                 case "actors":
-                    return "actors";
+                    return "actorsaaa";
                    
                 default:
                     return "category doesn't exist";

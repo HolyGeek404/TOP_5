@@ -4,13 +4,16 @@ import { HttpClient } from '@angular/common/http/'
 @Injectable({
   providedIn: 'root'
 })
-export class HttpService {
-
-constructor(private http: HttpClient) { }
-
-getValues()
+export class HttpService
 {
-  return this.http.get('https://localhost:5001/api/values');
-}
+
+  constructor(private http: HttpClient) { }
+
+  getValues(data: string)
+  {
+    alert(data);
+    // return this.http.get('https://localhost:5001/api/'+data);
+    return data;
+  }
 
 }

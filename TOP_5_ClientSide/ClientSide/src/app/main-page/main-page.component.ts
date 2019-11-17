@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../Http.service'
+import { Component, OnInit, Injectable } from '@angular/core';
+import { GameService } from '../gameCategory/service/Game.service';
 
 @Component({
   selector: 'app-main-page',
@@ -9,10 +9,15 @@ import { HttpService } from '../Http.service'
 
 export class MainPageComponent implements OnInit 
 {
-  result: Object;
-  activeCategoryList: Array <boolean> = [true,false,false,false,false];
+  constructor(private service: GameService) { }
 
-  constructor(private http: HttpService) { }
+  activeCategoryList: Array <boolean> = [true,false,false,false,false];
+ 
+
+  SetCategory(categoryName: string)
+  {
+    this.service.SetCategory(categoryName);
+  }
 
   ngOnInit() 
   {
@@ -22,7 +27,7 @@ export class MainPageComponent implements OnInit
 
   welcome()
   {
-    $('#welcomeAnimation').delay(1400).animate({top: '-100%'}, 1200);
+    $('#welcomeAnimation').delay(800).animate({top: '-100%'}, 1200);
   }
 
   fadeOutAllCategoryContents()
