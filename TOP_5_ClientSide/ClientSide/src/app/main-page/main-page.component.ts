@@ -1,4 +1,4 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GameService } from '../gameCategory/service/Game.service';
 
 @Component({
@@ -12,12 +12,6 @@ export class MainPageComponent implements OnInit
   constructor(private service: GameService) { }
 
   activeCategoryList: Array <boolean> = [true,false,false,false,false];
- 
-
-  SetCategory(categoryName: string)
-  {
-    this.service.SetCategory(categoryName);
-  }
 
   ngOnInit() 
   {

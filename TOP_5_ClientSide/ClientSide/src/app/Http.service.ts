@@ -11,7 +11,6 @@ export class HttpService
 
   getValues(data: string)
   {
-    alert(data);
     // return this.http.get('https://localhost:5001/api/'+data);
     return data;
   }
