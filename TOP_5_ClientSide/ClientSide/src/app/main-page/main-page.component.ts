@@ -16,12 +16,11 @@ export class MainPageComponent implements OnInit
   ngOnInit() 
   {
     this.fadeOutAllCategoryContents();
-    this.welcome();
   }
 
   welcome()
   {
-    $('#welcomeAnimation').delay(800).animate({top: '-100%'}, 1200);
+    $('#welcomeAnimation').delay(450).animate({top: '-100%'}, 1200);
   }
 
   fadeOutAllCategoryContents()

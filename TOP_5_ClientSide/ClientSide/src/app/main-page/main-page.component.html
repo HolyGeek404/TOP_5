@@ -1,14 +1,11 @@
 <main>
-    <div id="welcomeAnimation"><span>TOP 5</span></div>
+    <div id="welcomeAnimation">
+        <div><span>TOP 5</span></div>
+        <div><button (click)="welcome()">Let's go</button></div>
+    </div>
     <div id="container">
         <div id="content">
-            <div class="category"
-                id="games" 
-                [ngClass]="{
-                    'activeCategory': activeCategoryList[0],
-                    'unAC': activeCategoryList[0]==false
-                }"
-                >
+            <div class="category" id="games" [ngClass]="{'activeCategory': activeCategoryList[0],'unAC': activeCategoryList[0]==false}">
                 <div class="category_title" (click)="setActiveCategory(0, '#gamesContent')">
                     <span>Games</span>
                 </div>
@@ -24,13 +21,7 @@
                 </div>
             </div>
 
-            <div class="category" 
-                id="films" 
-                [ngClass]="{
-                    'activeCategory': activeCategoryList[1],
-                    'unAC': activeCategoryList[1]==false
-                }"  
-                >
+            <div class="category" id="films" [ngClass]="{'activeCategory': activeCategoryList[1],'unAC': activeCategoryList[1]==false}">
                 <div class="category_title" (click)="setActiveCategory(1, '#filmsContent')">
                     <span>Films</span>
                 </div>
@@ -46,13 +37,7 @@
                 </div>
             </div>
 
-            <div class="category" 
-                id="actors" 
-                [ngClass]="{
-                    'activeCategory': activeCategoryList[2],
-                    'unAC': activeCategoryList[2]==false
-                }"  
-                >
+            <div class="category" id="actors" [ngClass]="{'activeCategory': activeCategoryList[2],'unAC': activeCategoryList[2]==false}">
                 <div class="category_title" (click)="setActiveCategory(2, '#actorsContent')">
                     <span>Actors</span>
                 </div>
@@ -68,13 +53,7 @@
                 </div>
             </div>
 
-            <div class="category" 
-                id="singers" 
-                [ngClass]="{
-                    'activeCategory': activeCategoryList[3],
-                    'unAC': activeCategoryList[3]==false
-                }"  
-                >
+            <div class="category" id="singers" [ngClass]="{'activeCategory': activeCategoryList[3],'unAC': activeCategoryList[3]==false}">
                 <div class="category_title" (click)="setActiveCategory(3, '#singersContent')">
                     <span>Singers</span>
                 </div>
@@ -82,21 +61,15 @@
                 <div class="categoryContent" id="singersContent">
                     <ul>
                         <li>Wojtek Sokól</li>
-                        <li>Marcin Kamil Gutkowski</li>
-                        <li>Ashley Nicolette Frangipane</li>
-                        <li>Marshall Bruce Mathers III</li>
-                        <li>Bleta Rexha</li>
+                        <li>Marcin Gutkowski</li>
+                        <li>Paweł Kapliński</li>
+                        <li>Marshall Mathers III</li>
+                        <li>Ashley Frangipane</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="category" 
-                id="yt" 
-                [ngClass]="{
-                    'activeCategory': activeCategoryList[4],
-                    'unAC': activeCategoryList[4]==false
-                }"  
-                >
+            <div class="category" id="yt" [ngClass]="{'activeCategory': activeCategoryList[4],'unAC': activeCategoryList[4]==false}">
                 <div class="category_title" (click)="setActiveCategory(4, '#ytContent')">
                     <span id="ihateyou">Channels</span>
                 </div>
