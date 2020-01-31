@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'game/ACIII', component:GameComponent },
   { path: 'game/FC3', component:GameComponent },
   { path: 'game/GTAIV', component:GameComponent },
-  { path: 'game/Skyrim', component:GameComponent },
+  { path: 'game/DS2', component:GameComponent },
   { path: 'game/Gears-of-War', component:GameComponent },
 
 

@@ -16,4 +16,14 @@ export class GameComponent implements OnInit
   {
     this.message = this.service.ReturnCategoryName();
   }
+
+  Scroll()
+  {
+    $('html, body').animate
+    ({
+      scrollTop: $("#title_game").offset().top
+     }, 1000);
+    
+     $("#scroll_down").fadeOut();
+  }
 }
