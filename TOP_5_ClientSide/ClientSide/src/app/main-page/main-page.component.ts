@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { GameService } from '../gameCategory/service/Game.service';
 
 @Component({
   selector: 'app-main-page',
@@ -9,7 +8,7 @@ import { GameService } from '../gameCategory/service/Game.service';
 
 export class MainPageComponent implements OnInit 
 {
-  constructor(private service: GameService) { }
+  constructor() { }
 
   activeCategoryList: Array <boolean> = [true,false,false,false,false];
 
