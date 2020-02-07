@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using WebAPI.DataAccess;
+using WebAPI.DataObjects;
 
 namespace WebAPI.Controllers
 {
@@ -10,30 +9,11 @@ namespace WebAPI.Controllers
     [ApiController]
     public class GamesController : Controller
     {
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> ReturnAllCategories()
-        {
-            return new string[] { "games", "films", "actors" };
-        }
-
         [HttpGet("{categoryName}")]
         public ActionResult<string> ReturnSpecificCategory(string categoryName)
         {
-            switch (categoryName)
-            {
-                case "games":
-                    return "gamesaaaa";
-
-                case "films":
-                    return "filmsaaaa";
-
-                case "actors":
-                    return "actorsaaa";
-
-                default:
-                    return "category doesn't exist";
-
-            }
+            List<GameDto> gameDtos = GameDao.GetGameInfo(categoryName);
+            return Json(gameDtos);
         }
     }
 }
