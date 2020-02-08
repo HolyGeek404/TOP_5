@@ -9,5 +9,6 @@ namespace WebAPI.DataObjects
     {
         public int Id { get; set; }
         public string Title { get; set; }
+        public string Background_img_path { get; set; }
     }
 }
