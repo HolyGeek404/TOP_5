@@ -1,12 +1,45 @@
 <nav>
-  <div id="nav_container">
-   <a routerLink="/" routerLinkActive="active"><span>TOP 5</span></a>
+  <div  id="nav_container">
+   <a routerLink="/" routerLinkActive="active"><span id="logo">TOP 5</span></a>
     <div id="nav_content">
-      <div class="nav_elements">Games</div>
-      <div class="nav_elements">Films</div>
-      <div class="nav_elements">Actors</div>
-      <div class="nav_elements">Singers</div>
-      <div class="nav_elements">YT Channels</div>
+      <div class="nav_elements">
+        <span class="element" (click)="ShowSpecificCategoryElements()">Games</span>
+        <!-- <ul>
+          <a routerLink="/game/ACIII" routerLinkActive="active"><li>Assassin’s Creed III</li></a>
+          <a routerLink="/game/FC3" routerLinkActive="active"><li>Far Cry 3</li></a>
+          <a routerLink="/game/GTAIV" routerLinkActive="active"><li>Grand Theft Auto IV</li></a>
+          <a routerLink="/game/DS2" routerLinkActive="active"><li>Dark Souls 2</li></a>
+          <a routerLink="/game/Gears-of-War" routerLinkActive="active"><li>Gears of War</li></a>
+        </ul> -->
+      </div>
+      <div class="nav_elements">
+       <span class="element" >Films</span>
+      </div>
+      <div class="nav_elements">
+        <span class="element">Actors</span>
+      </div>
+      <div class="nav_elements">
+        <span class="element">Singers</span>
+      </div>
+      <div class="nav_elements">
+        <span class="element">YT Channels</span>
+      </div>
     </div>
   </div>
 </nav>
+
+<div id="category_elements_description">
+  <div id="elements_list">
+    <ul>
+      <a routerLink="/game/ACIII" routerLinkActive="active"><li>Assassin’s Creed III</li></a>
+      <a routerLink="/game/FC3" routerLinkActive="active"><li>Far Cry 3</li></a>
+      <a routerLink="/game/GTAIV" routerLinkActive="active"><li>Grand Theft Auto IV</li></a>
+      <a routerLink="/game/DS2" routerLinkActive="active"><li>Dark Souls 2</li></a>
+      <a routerLink="/game/Gears-of-War" routerLinkActive="active"><li>Gears of War</li></a>
+  </ul>
+  </div>
+  <div id="elements_description">
+      <img src="../../assets/games-imgs-content/ACIII/aciii-mainbg.jpg">
+  </div>
+  <div id="collapse" (click)="HideSpecificCategoryElements()">colapse</div>
+</div>

@@ -4,7 +4,7 @@ $NavBGC: #f3f1f5;
 *
 {
     font-family: 'Baloo Bhai', cursive;
-    color: #338ef5;
+    color: $primary;
 }
 a
 {
@@ -24,9 +24,8 @@ nav
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 2px solid $primary;
 
-    span
+    #logo
     {
         width: 140px;
         text-align: center;
@@ -36,7 +35,7 @@ nav
         display: block;
         transition: all, 0.8s;
     }
-    span:hover
+    #logo:hover
     {
         background-color: darken($primary, 10%);
         color: $NavBGC;
@@ -52,10 +51,41 @@ nav
     margin: auto;
     display: flex;  
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
-
 .nav_elements
+{
+    position: relative;
+}
+.nav_elements ul
+{
+    display: none;
+    padding: unset;
+    margin: unset;
+    position: absolute;
+    bottom: -177px;
+    width: 170px;
+    background-color: darken($primary, 40%);
+    list-style: none;
+
+    li
+    {
+        padding: unset;
+        margin: unset;
+        text-align: center;
+        padding: 5px;
+        line-height: 1.5em;
+    }
+    ul:hover
+    {
+        display: block;
+    }
+}
+.nav_elements:hover > ul
+{
+    display: block;
+}
+.element
 {
     margin: auto;
     padding: 4px 12px;
@@ -63,16 +93,17 @@ nav
     border-radius: 5px;
     cursor: pointer;
     position: relative;
-    z-index: 10;
     overflow: hidden;
+    z-index: 10;
     text-transform: uppercase;
     transition: color, 0.8s;
+    display: block;
 }
-.nav_elements:hover
+.element:hover
 {
     color: $NavBGC;
 }
-.nav_elements::before
+.element::before
 {
     position: absolute;
     content: '';
@@ -89,7 +120,7 @@ nav
     transition-timing-function: ease-out;
     visibility: hidden;
 }
-.nav_elements:hover::before
+.element:hover::before
 {
     width: 100%;
     height: 100%;
@@ -98,4 +129,53 @@ nav
     opacity: 1;
     left: 0;
     visibility: visible;
+}
+
+#category_elements_description
+{
+    width: 100%;
+    height: 0px;
+    position: absolute;
+    background-color: darken($primary,40%);
+    overflow: hidden;
+}
+
+#elements_list
+{
+    width: 50%;
+    height: 0%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#elements_description
+{
+    width: 50%;
+    height: 85%;
+    float: left;
+    
+    img
+    {
+        width: 230px;
+        height: 80%;
+
+    }
+}
+#collapse
+{
+    width: 100%;
+    height: 0%;
+    background-color: inherit;
+    transition: all 0.6s;
+    cursor: pointer;
+    clear: both;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#collapse:hover
+{
+    background-color: darken($primary,50%);
 }
