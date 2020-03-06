@@ -11,8 +11,15 @@ export class GameComponent implements OnInit
   constructor(private http: HttpClient){}
 
   data: any;
+
   gameTitle: string;
-  a: string;
+  description: string;
+
+  ac3ImgNavDesc: string;
+  ac3NavDesc: string;
+  
+  fc3ImgNavDesc: string;
+  fc3NavDesc: string;
 
   ngOnInit() 
   {
@@ -28,9 +35,10 @@ export class GameComponent implements OnInit
     { this.data = response; 
       
       this.data.forEach(x => {
-        this.SetMainBackgroundImg(x.background_img_path);
+        this.SetImg(x.background_img_path,x.description_img_path);
+        this.gameTitle = x.title;
+        this.description = x.description;
       });
-      
     })
   }
 
@@ -44,11 +52,17 @@ export class GameComponent implements OnInit
      $("#scroll_down").fadeOut();
   }
 
-  SetMainBackgroundImg(x: any)
+  SetImg(mainBgPath: any, descriptionImgPath: any)
   {
-    $("#title_block").css("background","url("+x+")");
-    $("#title_block").css(" background-attachment", "fixed");
+    // main bg
+    $("#title_block").css("background","url("+mainBgPath+")");
+    $("#title_block").css("background-attachment", "fixed");
     $("#title_block").css("background-position", "center");
     $("#title_block").css("background-size", "cover");
+
+    //description img
+    $("#img").css("background","url("+descriptionImgPath+")");
+    $("#img").css("background-position", "center");
+    $("#img").css("background-size", "cover");
   }
 }

@@ -21,5 +21,15 @@ namespace WebAPI.DataAccess
                 return gameDtos;
             }
         }
+
+        public static List<GameDto> GetGameNavDesc()
+        {
+            using (IDbConnection connection = new SqlConnection("Data Source=localhost;Initial Catalog=TOP_5;Integrated Security=True"))
+            {
+                List<GameDto> gameDtos = connection.Query<GameDto>("dbo.Games_GetNavDescription ").ToList();
+
+                return gameDtos;
+            }
+        }
     }
 }

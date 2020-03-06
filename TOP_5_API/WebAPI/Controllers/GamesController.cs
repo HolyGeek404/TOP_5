@@ -15,5 +15,11 @@ namespace WebAPI.Controllers
             List<GameDto> gameDtos = GameDao.GetGameInfo(categoryName);
             return Json(gameDtos);
         }
+
+        public ActionResult<string> ReturnGameNavDesc()
+        {
+            List<GameDto> gameDtos = GameDao.GetGameNavDesc();
+            return Json(gameDtos);
+        }
     }
 }

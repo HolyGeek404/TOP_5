@@ -155,12 +155,14 @@ nav
     width: 50%;
     height: 85%;
     float: left;
-    
-    img
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    #imgDesc
     {
         width: 230px;
-        height: 80%;
-
+        height: inherit
     }
 }
 #collapse
@@ -174,8 +176,18 @@ nav
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 15px;
 }
 #collapse:hover
 {
     background-color: darken($primary,50%);
+}
+
+#description
+{
+    width: 100%;
+    max-height: 85%;
+    padding:10px;
+    text-align: justify;
+    font-size: 0.9em;
 }

@@ -3,7 +3,7 @@
 <div id="container">
   <div id="title_block">
     <div id="title">
-      <span id="title_game" *ngFor="let x of data">{{ x.title }}</span>
+      <span id="title_game" >{{ gameTitle }}</span>
     </div>
     <div id="scroll_down" (click)="Scroll()">
       <img src="../../../assets/category_imgs/icons8-scroll-down-50.png">
@@ -11,12 +11,7 @@
   </div>
   <div id="content">
     <div id="content_section_1">
-      <div id="content_1">
-        Przygodowa gra akcji stworzona przez Ubisoft Montreal, 
-        wydana przez Ubisoft w 2012 roku na platformy Microsoft Windows, Xbox 360, PlayStation 3 i Wii U. 
-        Stanowi piątą dużą odsłonę serii Assassin’s Creed i kontynuację 
-        wydanego rok wcześniej Assassin’s Creed: Revelations. 
-     </div>
+      <div id="content_1"> {{ description }} </div>
      <div id="img"></div>
     </div>
   </div>
