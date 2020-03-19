@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'game/FC3', component:GameComponent },
   { path: 'game/GTAIV', component:GameComponent },
   { path: 'game/DS2', component:GameComponent },
-  { path: 'game/Gears-of-War', component:GameComponent },
+  { path: 'game/GOW', component:GameComponent },
 
 
 ];

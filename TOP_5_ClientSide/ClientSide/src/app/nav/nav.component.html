@@ -3,7 +3,7 @@
    <a routerLink="/" routerLinkActive="active"><span id="logo">TOP 5</span></a>
     <div id="nav_content">
       <div class="nav_elements">
-        <span class="element" (click)="ShowSpecificCategoryElements()">Games</span></div>
+        <span class="element" (click)="RetriveGameNavDesc()">Games</span></div>
       <div class="nav_elements">
        <span class="element" >Films</span>
       </div>
@@ -22,17 +22,11 @@
 
 <div id="category_elements_description">
   <div id="elements_list">
-    <ul>
-      <a routerLink="/game/ACIII" routerLinkActive="active" (mouseover)="ShowDescription('ACIII')"><li>Assassin’s Creed III</li></a>
-      <a routerLink="/game/FC3" routerLinkActive="active" (mouseover)="ShowDescription('FC3')"><li>Far Cry 3</li></a>
-      <a routerLink="/game/GTAIV" routerLinkActive="active" (mouseover)="ShowDescription('GTAIV')"><li>Grand Theft Auto IV</li></a>
-      <a routerLink="/game/DS2" routerLinkActive="active" ><li>Dark Souls 2</li></a>
-      <a routerLink="/game/Gears-of-War" routerLinkActive="active"><li>Gears of War</li></a>
-  </ul>
+    <ul id="navDescList"></ul>
   </div>
   <div id="elements_description">
       <div id="imgDesc"></div>
-      <div id="description"> {{ description }} </div> 
+      <div id="description"></div> 
   </div>
   <div id="collapse" (click)="HideSpecificCategoryElements()">colapse</div>
 </div>
