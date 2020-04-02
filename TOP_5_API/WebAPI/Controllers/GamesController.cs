@@ -9,10 +9,10 @@ namespace WebAPI.Controllers
     [ApiController]
     public class GamesController : Controller
     {
-        [HttpGet("{categoryName}")]
-        public ActionResult<string> ReturnSpecificCategory(string categoryName)
+        [HttpGet("{gameName}")]
+        public ActionResult<string> ReturnSpecificGame(string gameName)
         {
-            List<GameDto> gameDtos = GameDao.GetGameInfo(categoryName);
+            List<GameDto> gameDtos = GameDao.GetGameInfo(gameName);
             return Json(gameDtos);
         }
 
