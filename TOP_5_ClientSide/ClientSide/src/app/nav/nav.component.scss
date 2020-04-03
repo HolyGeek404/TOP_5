@@ -8,7 +8,7 @@ $NavBGC: #f3f1f5;
 }
 a
 {
-    text-decoration: unset;
+    text-decoration: unset !important;
 }
 
 nav
@@ -76,6 +76,8 @@ nav
         text-align: center;
         padding: 5px;
         line-height: 1.5em;
+
+       
     }
     ul:hover
     {

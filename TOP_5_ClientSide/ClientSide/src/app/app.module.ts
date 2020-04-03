@@ -5,15 +5,17 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { NavComponent } from './nav/nav.component';
 import { MainPageComponent } from './main-page/main-page.component';
-import { GameComponent } from './gameCategory/game/game.component';
+import { GameComponent } from './gameCategory/game.component';
 import { XdComponent } from './xd/xd.component';
+import { MovieComponent } from './movieCategory/movie.component';
 
 @NgModule({
    declarations: [
       NavComponent,
       MainPageComponent,
       GameComponent,
-      XdComponent
+      XdComponent,
+      MovieComponent
    ],
    imports: [
       BrowserModule,
@@ -21,6 +23,8 @@ import { XdComponent } from './xd/xd.component';
       HttpClientModule
    ],
    providers: [],
-   bootstrap: [XdComponent]
+   bootstrap: [
+      XdComponent
+   ]
 })
 export class AppModule { }

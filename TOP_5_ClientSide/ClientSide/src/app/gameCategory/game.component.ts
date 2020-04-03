@@ -12,31 +12,26 @@ export class GameComponent implements OnInit
 
   data: any;
 
-  gameTitle: string;
+  title: string;
   description: string;
-
-  ac3ImgNavDesc: string;
-  ac3NavDesc: string;
-  
-  fc3ImgNavDesc: string;
-  fc3NavDesc: string;
 
   ngOnInit() 
   {
     this.RetriveGameData();
   }
-
+  
   RetriveGameData()
   {
     var splitedLocation = window.location.href.split("/");
-    this.gameTitle = splitedLocation[splitedLocation.length-1];
-
-    this.http.get('https://localhost:5001/api/games/'+this.gameTitle).subscribe(response => 
+    
+    this.title = splitedLocation[splitedLocation.length-2]+"/"+splitedLocation[splitedLocation.length-1];
+    
+    this.http.get('https://localhost:5001/api/'+this.title).subscribe(response => 
     { this.data = response; 
       
       this.data.forEach(x => {
         this.SetImg(x.background_img_path,x.description_img_path);
-        this.gameTitle = x.title;
+        this.title = x.title;
         this.description = x.description;
       });
     })

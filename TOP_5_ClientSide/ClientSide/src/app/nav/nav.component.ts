@@ -58,22 +58,73 @@ export class NavComponent implements OnInit {
         }
       });
 
-      if($('#navDescList').children().length <= 0 ) 
-      {
-        this.CreateCategoryListDescription(response,"game"); 
-      }
+      $('#navDescList').empty();
+      this.CreateGameCategoryListDescription(response,"games"); 
+      
     })
 
     this.ShowSpecificCategoryElements();
   }
 
-  CreateCategoryListDescription(data: any, category:string)
+  RetriveMovieNavDesc()
+  {
+    this.http.get("https://localhost:5001/api/movies/").subscribe(response =>
+    {
+      this.data = response;
+
+      this.data.forEach(x => {
+        switch(x.title)
+        {
+          case "End-of-Watch":
+           this.storage.setItem("End-of-Watch_NavDesc", x.description);
+           this.storage.setItem("End-of-Watch_NavImgPath", x.description_img_path);
+            break;
+
+          case "A-Beautiful-Day-in-the-Neighborhood":
+           this.storage.setItem("A-Beautiful-Day-in-the-Neighborhood_NavDesc", x.description);
+           this.storage.setItem("A-Beautiful-Day-in-the-Neighborhood_NavImgPath", x.description_img_path);
+            break;
+
+          case "Logan:-Wolverine":
+           this.storage.setItem("Logan:-Wolverine_NavDesc", x.description);
+           this.storage.setItem("Logan:-Wolverine_NavImgPath", x.description_img_path);
+            break;
+
+          case "Paranormal-Activity":
+           this.storage.setItem("Paranormal-Activity_NavDesc", x.description);
+           this.storage.setItem("Paranormal-Activity_NavImgPath", x.description_img_path);
+            break;
+
+          case "Avengers:-Endgame":
+           this.storage.setItem("Avengers:-Endgame_NavDesc", x.description);
+           this.storage.setItem("Avengers:-Endgame_NavImgPath", x.description_img_path);
+            break;
+        }
+      });
+
+      $('#navDescList').empty();
+      this.CreateMovieCategoryListDescription(response,"movies"); 
+      
+    })
+
+    this.ShowSpecificCategoryElements();
+  }
+
+  CreateGameCategoryListDescription(data: any, category:string)
   {
     data.forEach(x => {
       var z = "'"+x.short_title+"'";
       $("#navDescList").append(
         '<a onmouseover="a'+'('+z+')'+'" routerlink="/'+category+'/'+x.short_title+'" href="/'+category+'/'+x.short_title+'"><li>'+x.title+'</li></a>');
-        // '<a _ngcontent-lgy-c2="" routerLink="/'+category+'/'+ x.short_title+'" routerLinkActive="active" ng-reflect-router-link="/game/ACIII" g-reflect-router-link-active="active" class="active" href="/game/ACIII" (mouseover)="ShowDescription('+x.short_title+')"><li _ngcontent-ymv-c2="">'+x.title+'</li></a>');
+    });
+  }
+  CreateMovieCategoryListDescription(data: any, category:string)
+  {
+    data.forEach(x => {
+      var z = "'"+x.title+"'";
+
+      $("#navDescList").append(
+        '<a onmouseover="a'+'('+z+')'+'" routerlink="/'+category+'/'+x.title+'" href="/'+category+'/'+x.title+'"><li>'+x.title.replace(/-/g, " ")+'</li></a>');
     });
   }
 
