@@ -8,7 +8,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GameComponent implements OnInit 
 {
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient)
+  {
+    this.title = ""
+    this.description = ""
+  }
 
   data: any;
 
@@ -29,7 +33,7 @@ export class GameComponent implements OnInit
     this.http.get('https://localhost:5001/api/'+this.title).subscribe(response => 
     { this.data = response; 
       
-      this.data.forEach(x => {
+      this.data.forEach((x: { background_img_path: any; description_img_path: any; title: string; description: string; }) => {
         this.SetImg(x.background_img_path,x.description_img_path);
         this.title = x.title;
         this.description = x.description;
@@ -39,8 +43,9 @@ export class GameComponent implements OnInit
 
   Scroll()
   {
+    // $("#title_game").offset().top
     $('html, body').animate
-    ({
+     ({
       scrollTop: $("#title_game").offset().top
      }, 1000);
     

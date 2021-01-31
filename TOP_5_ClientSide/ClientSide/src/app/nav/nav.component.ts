@@ -8,7 +8,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NavComponent implements OnInit {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) 
+  {
+    this.gameTitle = ""
+    this.description  = ""
+    this.imgDescription = ""
+  }
 
   ngOnInit()
   { 
@@ -28,7 +33,7 @@ export class NavComponent implements OnInit {
     {
       this.data = response;
 
-      this.data.forEach(x => {
+      this.data.forEach((x: { short_title: any; description: any; description_img_path: any; }) => {
         switch(x.short_title)
         {
           case "ACIII":
@@ -72,7 +77,7 @@ export class NavComponent implements OnInit {
     {
       this.data = response;
 
-      this.data.forEach(x => {
+      this.data.forEach((x: { title: any; description: any; description_img_path: any; }) => {
         switch(x.title)
         {
           case "End-of-Watch":
@@ -112,7 +117,7 @@ export class NavComponent implements OnInit {
 
   CreateGameCategoryListDescription(data: any, category:string)
   {
-    data.forEach(x => {
+    data.forEach((x: { short_title: string; title: string; }) => {
       var z = "'"+x.short_title+"'";
       $("#navDescList").append(
         '<a onmouseover="a'+'('+z+')'+'" routerlink="/'+category+'/'+x.short_title+'" href="/'+category+'/'+x.short_title+'"><li>'+x.title+'</li></a>');
@@ -120,7 +125,7 @@ export class NavComponent implements OnInit {
   }
   CreateMovieCategoryListDescription(data: any, category:string)
   {
-    data.forEach(x => {
+    data.forEach((x: { title: string; }) => {
       var z = "'"+x.title+"'";
 
       $("#navDescList").append(
