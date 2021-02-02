@@ -8,12 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NavComponent implements OnInit {
 
-  constructor(private http:HttpClient) 
-  {
-    this.gameTitle = ""
-    this.description  = ""
-    this.imgDescription = ""
-  }
+  constructor(private http:HttpClient) {}
 
   ngOnInit()
   { 
@@ -22,10 +17,6 @@ export class NavComponent implements OnInit {
   
   storage: any;
   data: any;
-
-  gameTitle: string;
-  description: string;
-  imgDescription: string;
 
   RetriveGameNavDesc()
   {

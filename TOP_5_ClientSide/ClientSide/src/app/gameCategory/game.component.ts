@@ -43,7 +43,6 @@ export class GameComponent implements OnInit
 
   Scroll()
   {
-    // $("#title_game").offset().top
     $('html, body').animate
      ({
       scrollTop: $("#title_game").offset().top
