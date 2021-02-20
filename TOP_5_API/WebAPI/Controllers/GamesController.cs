@@ -1,24 +1,34 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using WebAPI.DataAccess;
 using WebAPI.DataObjects;
 
 namespace WebAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class GamesController : Controller
     {
-        [HttpGet("{gameName}")]
-        public ActionResult<string> ReturnSpecificGame(string gameName)
+        private readonly IGameDao _gameDao;
+
+        public GamesController(IGameDao gameDao)
         {
-            List<GameDto> gameDtos = GameDao.GetGameInfo(gameName);
+            _gameDao = gameDao;
+        }
+
+        [HttpGet]
+        [Route("/api/game/{gameName}")]
+        public ActionResult<string> ReturnSpecificGame([FromRoute]string gameName)
+        {
+            List<GameDto> gameDtos = _gameDao.GetGameInfo(gameName);
             return Json(gameDtos);
         }
 
+        [HttpGet]
+        [Route("/api/games/description/")]
         public ActionResult<string> ReturnGameNavDesc()
         {
-            List<GameDto> gameDtos = GameDao.GetGameNavDesc();
+            List<GameDto> gameDtos = _gameDao.GetGameNavDesc();
             return Json(gameDtos);
         }
     }

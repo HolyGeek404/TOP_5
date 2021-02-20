@@ -42,7 +42,7 @@ export class MovieComponent implements OnInit {
     
     this.title = splitedLocation[splitedLocation.length-2]+"/"+splitedLocation[splitedLocation.length-1];
     
-    this.http.get('https://localhost:5001/api/'+this.title).subscribe(response => 
+    this.http.get('https://localhost:5001/api/movie/'+this.title).subscribe(response => 
     { this.data = response; 
       
       this.data.forEach(((x: { background_img_path: any; description_img_path: any; title: string; description: string; }) => 

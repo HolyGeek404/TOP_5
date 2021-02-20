@@ -20,7 +20,7 @@ export class NavComponent implements OnInit {
 
   RetriveGameNavDesc()
   {
-    this.http.get("https://localhost:5001/api/games/").subscribe(response =>
+    this.http.get("https://localhost:5001/api/games/description/").subscribe(response =>
     {
       this.data = response;
 
@@ -64,7 +64,7 @@ export class NavComponent implements OnInit {
 
   RetriveMovieNavDesc()
   {
-    this.http.get("https://localhost:5001/api/movies/").subscribe(response =>
+    this.http.get("https://localhost:5001/api/movies/description/").subscribe(response =>
     {
       this.data = response;
 

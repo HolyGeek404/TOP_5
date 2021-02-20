@@ -1,24 +1,33 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using WebAPI.DataAccess;
 using WebAPI.DataObjects;
 
 namespace WebAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class MoviesController : Controller
     {
-        [HttpGet("{movieName}")]
-        public ActionResult<string> ReturnSpecificMovie(string movieName)
+        private readonly IMoviesDao _moviesDao;
+
+        public MoviesController( IMoviesDao moviesDao)
         {
-            List<MoviesDto> moviesDtos = MoviesDao.GetMovie(movieName);
-            return Json(moviesDtos);
+            _moviesDao = moviesDao;
         }
 
+        [HttpGet]
+        [Route("/api/movie/{movieName}")]
+        public ActionResult<string> ReturnSpecificMovie([FromRoute]string movieName)
+        {
+            List<MoviesDto> moviesDtos = _moviesDao.GetMovie(movieName);
+            return Json(moviesDtos);
+        }
+        [HttpGet]
+        [Route("/api/movies/description/")]
         public ActionResult<string> ReturnMoviesDescription()
         {
-            List<MoviesDto> moviesDtos = MoviesDao.GetAllMovies();
+            List<MoviesDto> moviesDtos = _moviesDao.GetAllMovies();
             return Json(moviesDtos);
         }
     }
