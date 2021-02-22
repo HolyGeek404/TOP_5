@@ -15,6 +15,7 @@ export class MovieComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.RetriveMovieData();
   }
 
   data: any | undefined;
@@ -36,11 +37,11 @@ export class MovieComponent implements OnInit {
     $("#img").css("background-size", "cover");
   }
 
-  RetriveGameData()
+  RetriveMovieData()
   {
     var splitedLocation = window.location.href.split("/");
     
-    this.title = splitedLocation[splitedLocation.length-2]+"/"+splitedLocation[splitedLocation.length-1];
+    this.title = splitedLocation[splitedLocation.length-1];
     
     this.http.get('https://localhost:5001/api/movie/'+this.title).subscribe(response => 
     { this.data = response; 

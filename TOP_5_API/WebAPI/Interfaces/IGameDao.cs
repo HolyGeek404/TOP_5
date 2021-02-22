@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using WebAPI.DataObjects;
 
-namespace WebAPI.DataAccess
+namespace WebAPI.Interfaces
 {
     public interface IGameDao
     {

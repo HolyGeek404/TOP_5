@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using WebAPI.DataObjects;
+using WebAPI.Interfaces;
 
 namespace WebAPI.DataAccess
 {

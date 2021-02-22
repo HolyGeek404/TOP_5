@@ -18,109 +18,32 @@ export class NavComponent implements OnInit {
   storage: any;
   data: any;
 
-  RetriveGameNavDesc()
+  RetriveGameNavDesc(category:string)
   {
-    this.http.get("https://localhost:5001/api/games/description/").subscribe(response =>
-    {
-      this.data = response;
-
-      this.data.forEach((x: { short_title: any; description: any; description_img_path: any; }) => {
-        switch(x.short_title)
-        {
-          case "ACIII":
-           this.storage.setItem("ACIII_NavDesc", x.description);
-           this.storage.setItem("ACIII_NavImgPath", x.description_img_path);
-            break;
-
-          case "FC3":
-           this.storage.setItem("FC3_NavDesc", x.description);
-           this.storage.setItem("FC3_NavImgPath", x.description_img_path);
-            break;
-
-          case "GTAIV":
-           this.storage.setItem("GTAIV_NavDesc", x.description);
-           this.storage.setItem("GTAIV_NavImgPath", x.description_img_path);
-            break;
-
-          case "DS2":
-           this.storage.setItem("DS2_NavDesc", x.description);
-           this.storage.setItem("DS2_NavImgPath", x.description_img_path);
-            break;
-
-          case "GOW":
-           this.storage.setItem("GOW_NavDesc", x.description);
-           this.storage.setItem("GOW_NavImgPath", x.description_img_path);
-            break;
-        }
-      });
-
-      $('#navDescList').empty();
-      this.CreateGameCategoryListDescription(response,"games"); 
-      
-    })
-
-    this.ShowSpecificCategoryElements();
-  }
-
-  RetriveMovieNavDesc()
-  {
-    this.http.get("https://localhost:5001/api/movies/description/").subscribe(response =>
+    this.http.get("https://localhost:5001/api/"+category+"/description/").subscribe(response =>
     {
       this.data = response;
 
       this.data.forEach((x: { title: any; description: any; description_img_path: any; }) => {
-        switch(x.title)
-        {
-          case "End-of-Watch":
-           this.storage.setItem("End-of-Watch_NavDesc", x.description);
-           this.storage.setItem("End-of-Watch_NavImgPath", x.description_img_path);
-            break;
 
-          case "A-Beautiful-Day-in-the-Neighborhood":
-           this.storage.setItem("A-Beautiful-Day-in-the-Neighborhood_NavDesc", x.description);
-           this.storage.setItem("A-Beautiful-Day-in-the-Neighborhood_NavImgPath", x.description_img_path);
-            break;
-
-          case "Logan:-Wolverine":
-           this.storage.setItem("Logan:-Wolverine_NavDesc", x.description);
-           this.storage.setItem("Logan:-Wolverine_NavImgPath", x.description_img_path);
-            break;
-
-          case "Paranormal-Activity":
-           this.storage.setItem("Paranormal-Activity_NavDesc", x.description);
-           this.storage.setItem("Paranormal-Activity_NavImgPath", x.description_img_path);
-            break;
-
-          case "Avengers:-Endgame":
-           this.storage.setItem("Avengers:-Endgame_NavDesc", x.description);
-           this.storage.setItem("Avengers:-Endgame_NavImgPath", x.description_img_path);
-            break;
-        }
+        this.storage.setItem(x.title,x.description)
+        this.storage.setItem(x.title+"_NavImgPath",x.description_img_path)
       });
 
       $('#navDescList').empty();
-      this.CreateMovieCategoryListDescription(response,"movies"); 
+      this.CreateCategoryListDescription(response,category); 
       
     })
 
     this.ShowSpecificCategoryElements();
   }
 
-  CreateGameCategoryListDescription(data: any, category:string)
-  {
-    data.forEach((x: { short_title: string; title: string; }) => {
-      var z = "'"+x.short_title+"'";
-      $("#navDescList").append(
-        '<a onmouseover="a'+'('+z+')'+'" routerlink="/'+category+'/'+x.short_title+'" href="/'+category+'/'+x.short_title+'"><li>'+x.title+'</li></a>');
-    });
-  }
-  CreateMovieCategoryListDescription(data: any, category:string)
+  CreateCategoryListDescription(data: any, category:string)
   {
     data.forEach((x: { title: string; }) => {
       var z = "'"+x.title+"'";
-
       $("#navDescList").append(
-        '<a onmouseover="a'+'('+z+')'+'" routerlink="/'+category+'/'+x.title+'" href="/'+category+'/'+x.title+'"><li>'+x.title.replace(/-/g, " ")+'</li></a>');
+        '<a onmouseover="a'+'('+z+')'+'" routerlink="/'+category+'/'+x.title+'" href="/'+category+'/'+x.title+'"><li>'+x.title+'</li></a>');
     });
   }
 

@@ -28,12 +28,13 @@ export class GameComponent implements OnInit
   {
     var splitedLocation = window.location.href.split("/");
     
-    this.title = splitedLocation[splitedLocation.length-2]+"/"+splitedLocation[splitedLocation.length-1];
+    this.title = splitedLocation[splitedLocation.length-1];
     
     this.http.get('https://localhost:5001/api/game/'+this.title).subscribe(response => 
-    { this.data = response; 
-      
+    { 
+      this.data = response; 
       this.data.forEach((x: { background_img_path: any; description_img_path: any; title: string; description: string; }) => {
+
         this.SetImg(x.background_img_path,x.description_img_path);
         this.title = x.title;
         this.description = x.description;
@@ -43,10 +44,10 @@ export class GameComponent implements OnInit
 
   Scroll()
   {
-    // $('html, body').animate
-    //  ({
-    //   scrollTop: $("#title_game").offset().top
-    //  }, 1000);
+    $('html, body').animate
+     ({
+      scrollTop: $("#title_game").offset().top
+     }, 1000);
     
      $("#scroll_down").fadeOut();
   }

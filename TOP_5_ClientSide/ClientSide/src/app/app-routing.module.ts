@@ -7,17 +7,17 @@ import { MovieComponent } from './movieCategory/movie.component';
 
 const routes: Routes = [
   { path: '', component:MainPageComponent },
-  { path: 'games/ACIII', component:GameComponent },
-  { path: 'games/FC3', component:GameComponent },
-  { path: 'games/GTAIV', component:GameComponent },
-  { path: 'games/DS2', component:GameComponent },
-  { path: 'games/GOW', component:GameComponent },
+  { path: 'games/Assassin\'s Creed III', component:GameComponent },
+  { path: 'games/Far Cry 3', component:GameComponent },
+  { path: 'games/Grand Theft Auto IV', component:GameComponent },
+  { path: 'games/Dark Souls 2', component:GameComponent },
+  { path: 'games/Gears of War', component:GameComponent },
 
-  { path: 'movies/End-of-Watch', component:MovieComponent },
-  { path: 'movies/A-Beautiful-Day-in-the-Neighborhood', component:MovieComponent },
-  { path: 'movies/Logan:-Wolverine', component:MovieComponent },
-  { path: 'movies/Paranormal-Activity', component:MovieComponent },
-  { path: 'movies/Avengers:-Endgame', component:MovieComponent },
+  { path: 'movies/End of Watch', component:MovieComponent },
+  { path: 'movies/A Beautiful Day in the Neighborhood', component:MovieComponent },
+  { path: 'movies/Logan: Wolverine', component:MovieComponent },
+  { path: 'movies/Paranormal Activity', component:MovieComponent },
+  { path: 'movies/Avengers: Endgame', component:MovieComponent },
 
 
 ];

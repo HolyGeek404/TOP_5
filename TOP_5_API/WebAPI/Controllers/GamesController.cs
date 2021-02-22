@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using WebAPI.DataAccess;
 using WebAPI.DataObjects;
+using WebAPI.Interfaces;
 
 namespace WebAPI.Controllers
 {
